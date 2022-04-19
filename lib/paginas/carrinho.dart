@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lojinha/widgets/appbar_customizada.dart';
 
 class Carrinho extends StatelessWidget {
   const Carrinho({Key? key}) : super(key: key);
@@ -6,9 +7,8 @@ class Carrinho extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Carrinho'),
-      ),
+      backgroundColor: Colors.grey[200],
+      appBar: AppBarCustomizada(titulo:'Carrinho', ehCarrinho: true),
       body: Text('Estamos no Carrinho'),
     );
   }

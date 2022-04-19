@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:lojinha/paginas/carrinho.dart';
 import 'package:lojinha/paginas/detalhes.dart';
+import 'package:lojinha/widgets/appbar_customizada.dart';
 
 void main() {
   runApp(const MyApp());
@@ -80,9 +81,8 @@ class Inicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Início'),
-      ),
+      backgroundColor: Colors.grey[200],
+      appBar: AppBarCustomizada(titulo: 'Lojinha Alura', ehCarrinho: false),
       body: FlatButton(
         onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context) => Detalhes()));
