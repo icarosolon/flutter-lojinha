@@ -1,19 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:lojinha/modelos/movel.dart';
 import 'package:lojinha/widgets/appbar_customizada.dart';
+import 'package:lojinha/widgets/card_detalhes.dart';
 
 class Detalhes extends StatelessWidget {
-  const Detalhes({Key? key}) : super(key: key);
+
+  final Movel movel;
+
+  Detalhes({required this.movel});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBarCustomizada(titulo: 'Detalhes', ehCarrinho: false),
-      body: FlatButton(
-        onPressed: (){
-          Navigator.pushNamed(context, '/carrinho');
-        },
-        child: Text('Vá para o carrinho!'),
-      )
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('utilidades/assets/imagens/${movel.foto}'),
+          fit: BoxFit.cover
+        )
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBarCustomizada(titulo: 'Detalhes', ehCarrinho: false),
+        body: FlatButton(
+          onPressed: (){
+            Navigator.pushNamed(context, '/carrinho');
+          },
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              margin: EdgeInsets.all(16),
+              height: 200,
+                child: CardDetalhes(movel: movel,)
+            ),
+          ),
+        )
+      ),
     );
   }
 }
