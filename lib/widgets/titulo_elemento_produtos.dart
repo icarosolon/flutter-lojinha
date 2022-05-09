@@ -10,7 +10,7 @@ class TituloElementoProdutos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: 10,
-    child: Text(this.titulo)
+    child: Text(this.titulo, style: Theme.of(context).textTheme.headline2,)
     );
   }
 }

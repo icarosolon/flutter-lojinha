@@ -36,7 +36,7 @@ class ElementoGridProdutos extends StatelessWidget {
               imagem: this.movel.foto
               ),
               DegradeGridProdutos(),
-              TituloElementoProdutos(titulo: this.movel.titulo),
+              TituloElementoProdutos(titulo: this.movel.titulo,),
             ],
           ),
         ),

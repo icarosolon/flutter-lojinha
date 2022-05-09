@@ -21,7 +21,7 @@ class Detalhes extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBarCustomizada(titulo: 'Detalhes', ehCarrinho: false),
-        body: FlatButton(
+        body: OutlinedButton(
           onPressed: (){
             Navigator.pushNamed(context, '/carrinho');
           },
@@ -29,7 +29,7 @@ class Detalhes extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               margin: EdgeInsets.all(16),
-              height: 200,
+              height: 220,
                 child: CardDetalhes(movel: movel,)
             ),
           ),
